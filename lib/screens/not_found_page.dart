@@ -32,7 +32,7 @@ class NotFoundPage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "404",
+                  "404 test",
                   style: TextStyle(
                     fontFamily: fontFamily,
                     fontWeight: FontWeight.bold,
