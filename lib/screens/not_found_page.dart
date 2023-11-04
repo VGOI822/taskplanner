@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:taskplanner/widgets/footer%20copy.dart';
+import 'package:taskplanner/main.dart';
+import 'package:taskplanner/routes.dart';
 
-class NotFoundPage extends StatelessWidget {
+import 'package:taskplanner/widgets/footer%20copy.dart';
+import 'package:taskplanner/widgets/footer.dart';
+import 'package:taskplanner/widgets/footer_terms_mobile.dart';
+
+class NotFoundPage extends StatefulWidget {
   const NotFoundPage({super.key});
 
+  @override
+  State<NotFoundPage> createState() => _NotFoundPageState();
+}
+
+class _NotFoundPageState extends State<NotFoundPage> {
   @override
   Widget build(BuildContext context) {
     String fontFamily = 'Google Sans, sans-serif';
@@ -14,9 +24,12 @@ class NotFoundPage extends StatelessWidget {
       body: Center(
         child: ResponsiveConstraints(
           conditionalConstraints: [
-          Condition.equals(name: MOBILE, value: const BoxConstraints(maxWidth: 600, minWidth: 396)),
-          Condition.equals(name: TABLET, value:  const BoxConstraints(maxWidth: 800)),
-        ],
+            Condition.equals(
+                name: MOBILE,
+                value: const BoxConstraints(maxWidth: 600, minWidth: 396)),
+            Condition.equals(
+                name: TABLET, value: const BoxConstraints(maxWidth: 800)),
+          ],
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -25,18 +38,28 @@ class NotFoundPage extends StatelessWidget {
                   child: Text(
                     "Sorry, we couldn't find that page…",
                     style: TextStyle(
-                      fontSize: responsiveValue.smallerThan(DESKTOP) ? responsiveValue.smallerThan(TABLET) ? responsiveValue.smallerThan(MOBILE) ? 15 : 20 : 25 : 50 ,
+                      fontSize: responsiveValue.smallerThan(DESKTOP)
+                          ? responsiveValue.smallerThan(TABLET)
+                              ? responsiveValue.smallerThan(MOBILE)
+                                  ? 15
+                                  : 20
+                              : 25
+                          : 50,
                       fontWeight: FontWeight.bold,
                       fontFamily: fontFamily,
                     ),
                   ),
                 ),
                 Text(
-                  "404 test",
+                  "404",
                   style: TextStyle(
                     fontFamily: fontFamily,
                     fontWeight: FontWeight.bold,
-                    fontSize: responsiveValue.smallerThan(DESKTOP) ? responsiveValue.smallerThan(MOBILE) ? 100 : 202 : 404,
+                    fontSize: responsiveValue.smallerThan(DESKTOP)
+                        ? responsiveValue.smallerThan(MOBILE)
+                            ? 100
+                            : 202
+                        : 404,
                     color: Colors.blue[900],
                   ),
                 ),
@@ -44,7 +67,11 @@ class NotFoundPage extends StatelessWidget {
                 Text(
                   "We are here to help! Maybe one of these will",
                   style: TextStyle(
-                    fontSize: responsiveValue.smallerThan(DESKTOP) ? responsiveValue.smallerThan(TABLET) ? 13 : 15 : 30 ,
+                    fontSize: responsiveValue.smallerThan(DESKTOP)
+                        ? responsiveValue.smallerThan(TABLET)
+                            ? 13
+                            : 15
+                        : 30,
                     fontWeight: FontWeight.bold,
                     fontFamily: fontFamily,
                   ),
@@ -52,13 +79,20 @@ class NotFoundPage extends StatelessWidget {
                 Text(
                   "point you in the right direction?",
                   style: TextStyle(
-                    fontSize: responsiveValue.smallerThan(DESKTOP) ? responsiveValue.smallerThan(TABLET) ? 13 : 15 : 30,
+                    fontSize: responsiveValue.smallerThan(DESKTOP)
+                        ? responsiveValue.smallerThan(TABLET)
+                            ? 13
+                            : 15
+                        : 30,
                     fontWeight: FontWeight.bold,
                     fontFamily: fontFamily,
                   ),
                 ),
                 const SizedBox(height: 90),
-                const Footer2(),
+                responsiveValue.smallerThan(TABLET)
+                    ? const FooterTermsMobile()
+                    : const Footer(),
+                //const FooterTermsMobile(),
               ],
             ),
           ),

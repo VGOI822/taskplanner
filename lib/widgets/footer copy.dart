@@ -41,6 +41,7 @@ class Footer2 extends StatelessWidget {
               child: Text(
                 'Terms',
                 style: TextStyle(
+                  fontSize: 18,
                   color: color,
                   fontFamily: fontFamily,
                 ),
@@ -51,6 +52,7 @@ class Footer2 extends StatelessWidget {
               child: Text(
                 'Privacy',
                 style: TextStyle(
+                  fontSize: 18,
                   color: color,
                   fontFamily: fontFamily,
                 ),
@@ -64,6 +66,7 @@ class Footer2 extends StatelessWidget {
                 child: Text(
                   'Security',
                   style: TextStyle(
+                    fontSize: 18,
                     color: color,
                     fontFamily: fontFamily,
                     

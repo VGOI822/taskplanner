@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:taskplanner/l10n/l10n.dart';
 import 'package:taskplanner/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,16 +13,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: "Taskplanner",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      supportedLocales: L10n.all,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       builder: (context, widget) => ResponsiveBreakpoints.builder(
         child: widget!,
         breakpoints: const [
@@ -32,4 +41,10 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: Root.generateRoute,
     );
   }
+
+  Future changeAppName(String label) async =>
+      SystemChrome.setApplicationSwitcherDescription(
+          ApplicationSwitcherDescription(
+        label: label,
+      ));
 }

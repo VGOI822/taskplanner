@@ -1,6 +1,6 @@
 {
-    "name": "taskplanner",
-    "short_name": "taskplanner",
+    "name": "Taskplanner",
+    "short_name": "Taskplanner",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
