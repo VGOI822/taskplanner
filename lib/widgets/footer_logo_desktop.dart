@@ -18,7 +18,7 @@ class FooterDesktopLogo extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(
-            "Taskplanner2",
+            "Taskplanner",
             style: TextStyle(
                 color: color,
                 fontFamily: fontFamily,

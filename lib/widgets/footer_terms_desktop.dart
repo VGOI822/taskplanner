@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:responsive_framework/responsive_breakpoints.dart';
 import 'package:taskplanner/widgets/footer_logo_desktop.dart';
 import 'package:taskplanner/widgets/footer_logo_mobile.dart';
 
-class Footer extends StatelessWidget {
-  const Footer({super.key});
+class FooterTermsDesktop extends StatelessWidget {
+  const FooterTermsDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +11,7 @@ class Footer extends StatelessWidget {
     Color color = const Color(0xFF4A4A4A);
 
     final double screenWidth = MediaQuery.of(context).size.width;
-
-    final resposiveValue = ResponsiveBreakpoints.of(context);
-
-    if(screenWidth < 774){
+    if (screenWidth < 774) {
       return Container(
         height: 590,
         color: const Color(0xFFF8F9FA),
@@ -36,7 +31,7 @@ class Footer extends StatelessWidget {
                 child: Text(
                   'Copyright © Sabine-Blindow-Schule 2024',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 14,
                     color: color,
                     fontFamily: fontFamily,
                   ),
@@ -50,7 +45,7 @@ class Footer extends StatelessWidget {
                     child: Text(
                       'Terms',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 14,
                         color: color,
                         fontFamily: fontFamily,
                       ),
@@ -63,7 +58,7 @@ class Footer extends StatelessWidget {
                       child: Text(
                         'Privacy',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 14,
                           color: color,
                           fontFamily: fontFamily,
                         ),
@@ -77,7 +72,7 @@ class Footer extends StatelessWidget {
                       child: Text(
                         'Security',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 14,
                           color: color,
                           fontFamily: fontFamily,
                         ),
@@ -86,13 +81,11 @@ class Footer extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           ),
         ),
       );
     }
-
 
     return Container(
       height: 590,
@@ -106,11 +99,10 @@ class Footer extends StatelessWidget {
           children: [
             const FooterDesktopLogo(),
             const Padding(
-              padding:  EdgeInsets.only(left: 10,right: 10),
-              child:  Divider(),
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Divider(),
             ),
             const SizedBox(height: 5),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

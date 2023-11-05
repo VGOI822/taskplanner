@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:taskplanner/main.dart';
-import 'package:taskplanner/routes.dart';
-
-import 'package:taskplanner/widgets/footer%20copy.dart';
-import 'package:taskplanner/widgets/footer.dart';
+import 'package:taskplanner/widgets/footer_terms_desktop.dart';
 import 'package:taskplanner/widgets/footer_terms_mobile.dart';
 
 class NotFoundPage extends StatefulWidget {
@@ -91,7 +87,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
                 const SizedBox(height: 90),
                 responsiveValue.smallerThan(TABLET)
                     ? const FooterTermsMobile()
-                    : const Footer(),
+                    : const FooterTermsDesktop(),
                 //const FooterTermsMobile(),
               ],
             ),

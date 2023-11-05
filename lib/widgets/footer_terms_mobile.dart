@@ -11,6 +11,79 @@ class FooterTermsMobile extends StatelessWidget {
     String fontFamily = 'Google Sans, sans-serif';
     Color color = const Color(0xFF4A4A4A);
     final resposiveValue = ResponsiveBreakpoints.of(context);
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth <= 300) {
+      return Container(
+        height: 590,
+        color: const Color(0xFFF8F9FA),
+        padding: const EdgeInsets.all(16.0),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 100.0),
+          child: Column(
+            children: [
+              const FooterMobileLogo(),
+              const Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: Divider(),
+              ),
+              const SizedBox(height: 5),
+              Container(
+                margin: const EdgeInsets.only(left: 10),
+                child: Text(
+                  'Copyright © Sabine-Blindow-Schule 2024',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: color,
+                    fontFamily: fontFamily,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Terms',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: color,
+                    fontFamily: fontFamily,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Privacy',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: color,
+                      fontFamily: fontFamily,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Security',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: color,
+                      fontFamily: fontFamily,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Container(
       height: 590,
       color: const Color(0xFFF8F9FA),
@@ -32,7 +105,7 @@ class FooterTermsMobile extends StatelessWidget {
               child: Text(
                 'Copyright © Sabine-Blindow-Schule 2024',
                 style: TextStyle(
-                  fontSize: resposiveValue.smallerThan(TABLET) ? 14 : 18,
+                  fontSize: 14,
                   color: color,
                   fontFamily: fontFamily,
                 ),
@@ -82,7 +155,6 @@ class FooterTermsMobile extends StatelessWidget {
                 ),
               ],
             ),
-
           ],
         ),
       ),
