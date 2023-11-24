@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: "Taskplanner",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       supportedLocales: L10n.all,
       localizationsDelegates: const [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:taskplanner/widgets/custom_text_button.dart';
 import 'package:taskplanner/widgets/footer_logo_desktop.dart';
 import 'package:taskplanner/widgets/footer_logo_mobile.dart';
 
@@ -19,10 +20,12 @@ class Footer2 extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 100.0),
         child: Column(
           children: [
-            resposiveValue.smallerThan(TABLET) ? const FooterMobileLogo() : const FooterDesktopLogo(),
+            resposiveValue.smallerThan(TABLET)
+                ? const FooterMobileLogo()
+                : const FooterDesktopLogo(),
             const Padding(
-              padding:  EdgeInsets.only(left: 10,right: 10),
-              child:  Divider(),
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Divider(),
             ),
             const SizedBox(height: 5),
             Container(
@@ -36,8 +39,9 @@ class Footer2 extends StatelessWidget {
                 ),
               ),
             ),
-            TextButton(
+            CustomTextButton(
               onPressed: () {},
+              splashRadius: 18,
               child: Text(
                 'Terms',
                 style: TextStyle(
@@ -47,8 +51,9 @@ class Footer2 extends StatelessWidget {
                 ),
               ),
             ),
-            TextButton(
+            CustomTextButton(
               onPressed: () {},
+              splashRadius: 18,
               child: Text(
                 'Privacy',
                 style: TextStyle(
@@ -60,16 +65,15 @@ class Footer2 extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
-              child: TextButton(
-                onPressed: () {
-                },
+              child: CustomTextButton(
+                onPressed: () {},
+                splashRadius: 18,
                 child: Text(
                   'Security',
                   style: TextStyle(
                     fontSize: 18,
                     color: color,
                     fontFamily: fontFamily,
-                    
                   ),
                 ),
               ),

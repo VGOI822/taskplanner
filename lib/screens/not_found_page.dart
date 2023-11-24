@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:taskplanner/widgets/custom_text_button.dart';
 import 'package:taskplanner/widgets/footer_terms_desktop.dart';
 import 'package:taskplanner/widgets/footer_terms_mobile.dart';
+import 'package:taskplanner/widgets/head.dart';
+import 'package:taskplanner/widgets/head_logo.dart';
 
 class NotFoundPage extends StatefulWidget {
   const NotFoundPage({super.key});
@@ -16,6 +20,9 @@ class _NotFoundPageState extends State<NotFoundPage> {
     String fontFamily = 'Google Sans, sans-serif';
     final responsiveValue = ResponsiveBreakpoints.of(context);
     return Scaffold(
+      appBar: responsiveValue.smallerThan(DESKTOP)
+          ? AppBar()
+          : const CustomAppBar(),
       backgroundColor: const Color(0xFFFFFFFF),
       body: Center(
         child: ResponsiveConstraints(
@@ -31,9 +38,9 @@ class _NotFoundPageState extends State<NotFoundPage> {
               children: [
                 const SizedBox(height: 80),
                 Center(
-                  child: Text(
+                  child: SelectableText(
                     "Sorry, we couldn't find that page…",
-                    style: TextStyle(
+                    style: GoogleFonts.roboto(
                       fontSize: responsiveValue.smallerThan(DESKTOP)
                           ? responsiveValue.smallerThan(TABLET)
                               ? responsiveValue.smallerThan(MOBILE)
@@ -42,11 +49,11 @@ class _NotFoundPageState extends State<NotFoundPage> {
                               : 25
                           : 50,
                       fontWeight: FontWeight.bold,
-                      fontFamily: fontFamily,
                     ),
                   ),
                 ),
-                Text(
+
+                SelectableText(
                   "404",
                   style: TextStyle(
                     fontFamily: fontFamily,
@@ -60,7 +67,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text(
+                SelectableText(
                   "We are here to help! Maybe one of these will",
                   style: TextStyle(
                     fontSize: responsiveValue.smallerThan(DESKTOP)
@@ -72,7 +79,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
                     fontFamily: fontFamily,
                   ),
                 ),
-                Text(
+                SelectableText(
                   "point you in the right direction?",
                   style: TextStyle(
                     fontSize: responsiveValue.smallerThan(DESKTOP)

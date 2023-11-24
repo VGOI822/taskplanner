@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskplanner/widgets/custom_text_button.dart';
 import 'package:taskplanner/widgets/footer_logo_desktop.dart';
 import 'package:taskplanner/widgets/footer_logo_mobile.dart';
 
@@ -40,8 +41,9 @@ class FooterTermsDesktop extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
+                  CustomTextButton(
                     onPressed: () {},
+                    splashRadius: 18,
                     child: Text(
                       'Terms',
                       style: TextStyle(
@@ -53,8 +55,9 @@ class FooterTermsDesktop extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
-                    child: TextButton(
+                    child: CustomTextButton(
                       onPressed: () {},
+                      splashRadius: 18,
                       child: Text(
                         'Privacy',
                         style: TextStyle(
@@ -67,8 +70,9 @@ class FooterTermsDesktop extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
-                    child: TextButton(
+                    child: CustomTextButton(
                       onPressed: () {},
+                      splashRadius: 18,
                       child: Text(
                         'Security',
                         style: TextStyle(
@@ -120,8 +124,9 @@ class FooterTermsDesktop extends StatelessWidget {
                 Row(
                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextButton(
+                    CustomTextButton(
                       onPressed: () {},
+                      splashRadius: 18,
                       child: Text(
                         'Terms',
                         style: TextStyle(
@@ -131,8 +136,9 @@ class FooterTermsDesktop extends StatelessWidget {
                         ),
                       ),
                     ),
-                    TextButton(
+                    CustomTextButton(
                       onPressed: () {},
+                      splashRadius: 18,
                       child: Text(
                         'Privacy',
                         style: TextStyle(
@@ -142,8 +148,9 @@ class FooterTermsDesktop extends StatelessWidget {
                         ),
                       ),
                     ),
-                    TextButton(
+                    CustomTextButton(
                       onPressed: () {},
+                      splashRadius: 18,
                       child: Text(
                         'Security',
                         style: TextStyle(
